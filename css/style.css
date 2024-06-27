@@ -1,0 +1,1040 @@
+:root{
+    --primary-color:#343958;
+    --secondary-color:#8e3237;
+}
+@font-face {
+    font-family: saleha;
+    src: url(../SalehaRegular-0WA3z.ttf);
+  }
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Satisfy&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+*{
+    font-family: "DM Sans", sans-serif;
+}
+/* animations */
+ @-webkit-keyframes bg-pan-left {
+    0% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes bg-pan-left {
+    0% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes color-change {
+    0%{
+        background: #343958;
+    }
+    50%{
+        background: #8e3237;
+    }
+    100%{
+        background: #343958;
+    }
+  }
+  @keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+        border-radius: 5px;
+    }
+    50%{
+        transform: rotate(180deg);
+        border-radius: 15px;
+    }
+    100%{
+        transform: rotate(360deg);
+        border-radius: 5px;
+    }
+  }
+  @keyframes updown {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+  }
+  @keyframes popup {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+  }
+  @keyframes check {
+    0% {
+        transform: scale(1);
+    }
+    5%{
+        transform: scale(1.5);
+    }
+    10%{
+        transform: scale(1);
+    }
+    15%{
+        transform: scale(1.5);
+    }
+    20%{
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+  
+
+  @keyframes shine {
+    15% {
+      left: 125%;
+    }
+    100%{
+        left: 125%;
+    }
+  }
+/* animations END */
+/* ........ shapes .......... */
+.circle-shape{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: color-change 5s linear infinite;
+}
+.circle-shape-b{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1vh solid var(--primary-color);
+}
+.line-shape{
+    position: absolute;
+    width: 100px;
+    height: 5px;
+    border-radius: 10px;
+    animation: color-change 5s linear infinite;
+    animation-delay: 0.5s;
+}
+/* ........ shapes END .......... */
+body{
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/pattern/pattern-1.png) !important;
+    background-size: 373px 109px !important;
+    z-index: -1;
+    opacity: 0;
+}
+body::after{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/pattern/abic-letters.png) !important;
+    background-size: 200px 200px !important;
+    z-index: -1;
+    opacity: 4%;
+}
+@media screen and (max-width:765px) {
+    .hide-on-sm{
+        display: none !important;
+    }
+    .col-md-6.d-flex.align-items-stretch.hide-on-sm{
+        display: none !important;
+    }
+}
+header{
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    z-index: 100;
+}
+/* .................. navbar .............. */
+.navbar{
+    .navbar-brand img{
+        height: 60px;
+        z-index: 1000;
+        position: relative;
+    }
+    .btn{
+        color: white;
+        background-color: var(--primary-color);
+        text-transform: capitalize;
+    }
+    .btn:hover{
+        color: white;
+    }
+}
+/* .................. navbar END .............. */
+
+
+/* .................. banner .............. */
+.banner{
+    position: relative;
+    .contents{
+        margin-top: 30vh;
+        h1{
+            font-weight: bolder;
+            text-transform: capitalize;
+            font-size: 60px;
+            margin-bottom: 50px;
+            
+        }
+        h3{
+            font-size: 16px;
+            font-weight: bold;
+            position: relative;
+            border-bottom: 1px solid #02182694;
+            width: fit-content;
+            padding-bottom: 5px;
+            margin-left: 0;
+            margin-bottom: 30px;
+            -webkit-animation: bg-pan-left 5s ease-in-out infinite both;
+                animation: bg-pan-left 5s ease-in-out infinite both;
+            display: flex;
+            flex-direction: row-reverse;
+            padding: 10px;
+            gap: 5px;
+            color: white;
+                .check{
+                    height: 20px;
+                    animation: check 4s linear infinite;
+                }
+                .check.b{
+                    animation-delay: 0.2s;
+                }
+                .check.c{
+                    animation-delay: 0.4s;
+                }
+                .check.d{
+                    animation-delay: 0.8s;
+                }
+                .check.e{
+                    animation-delay: 1s;
+                }
+        }
+    }
+    .contents h3:nth-child(odd){
+        background: var(--primary-color);
+    }
+    .contents h3:nth-child(even){
+        background: var(--secondary-color);
+    }
+    .contents h3:nth-child(2) .ckeck{
+        animation-delay: 0.5s;
+    }
+    /* .contents h3:nth-child(odd){
+        background: var(--primary-color);
+    } */
+    /* .contents h3:nth-child(even){
+        background: var(--secondary-color);
+    } */
+    .contents h3:nth-child(2) .ckeck{
+        animation-delay: 0.5s;
+    }
+
+    /* image part */
+    .banner-img-div{
+        width: fit-content;
+        position: absolute;
+        right: 50px;
+        top: 50px;
+        .banner-img{
+            width: 70vh;
+            z-index: 1;
+            position: relative;
+        }
+        .google-review-div{/* google-review */
+            position: absolute;
+            left: -30%;
+            top: -10px;
+            background: white;
+            padding: 17px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 10px;
+            z-index: 100;
+            animation: updown 3s linear infinite;
+            .logo-rating-div{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                .logo-div .google{
+                    height: 30px;
+                }
+                .rating-div{
+                    line-height: 20px;
+                    .number{
+                        font-weight: 600;
+                        font-size: 20px;
+                        color: var(--primary-color);
+                    }
+                    .stars{
+                        color: gold;
+                    }
+                }
+            }
+
+            .text{
+                p{
+                    color: rgba(58, 58, 65, 0.689);
+                    margin-bottom: 0;
+                }
+            }
+            .tail{
+                clip-path: polygon(0 0, 79% 87%, 61% 0);
+                position: absolute;
+                bottom: 0;
+                right: 10px;
+                width: 60px;
+                height: 60px;
+                transform: translateY(100%);
+                background: white;
+            }
+    }
+    }
+    /* whatsapp button */
+    .row.whatsapp-row{
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0;
+        .whatsapp{
+            display: flex;
+            align-items: center;
+            color: #2eb843;
+            padding: 5px 15px;
+            border-radius: 30px;
+            border: 0;
+            width: fit-content;
+            background: white;
+            font-weight: bold;
+            border: 2px solid #2eb843;
+            text-transform: capitalize;
+            font-size: 30px;
+            transition: 0.4s;
+            img{
+                height: 40px;
+            }
+            .img-2{
+                display: none;
+            }
+        }
+        .whatsapp:hover{
+            background: #2eb843;
+            color: white;
+            .img-2{
+                display: block;
+            }
+            .img-1{
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:765px) {
+    .banner{
+        position: relative;
+        .contents{
+            margin-top: 0;
+            h1{
+                font-weight: bolder;
+                text-transform: capitalize;
+                font-size: 30px;
+                margin-bottom: 50px;
+                
+            }
+            h3{
+                font-size: 12px;
+                font-weight: bold;
+                position: relative;
+                border-bottom: 1px solid #02182694;
+                width: fit-content;
+                padding-bottom: 5px;
+                margin-bottom: 20px;
+                margin-left: 0;
+                -webkit-animation: bg-pan-left 5s ease-in-out infinite both;
+                    animation: bg-pan-left 5s ease-in-out infinite both;
+                color: white;
+                    .check{
+                        height: 20px;
+                    }
+            }
+        }
+    
+        /* image part */
+        .img-col{
+            padding: 20px 0;
+            .img-div img{
+                height: 350px;
+                object-fit: contain;
+            }
+        }
+    
+        /* whatsapp button */
+        .row.whatsapp-row{
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+            .whatsapp{
+                display: flex;
+                align-items: center;
+                color: #2eb843;
+                padding: 5px 15px;
+                border-radius: 30px;
+                border: 0;
+                width: fit-content;
+                background: white;
+                font-weight: bold;
+                border: 2px solid #2eb843;
+                text-transform: capitalize;
+                font-size: 20px;
+                transition: 0.4s;
+                img{
+                    height: 40px;
+                }
+                .img-2{
+                    display: none;
+                }
+            }
+            .whatsapp:hover{
+                background: #2eb843;
+                color: white;
+                .img-2{
+                    display: block;
+                }
+                .img-1{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/* .................. benner END .............. */
+
+/* ......... shapes ............ */
+header{
+    .circle-shape.shape1{
+        top: 50px;
+        left: 15px;
+        z-index: 1;
+    }
+    .line-shape.shape2{
+        right: -26px;
+        top: 130px;
+        transform: rotate(143deg);
+    }
+    .line-shape.shape3{
+        right: -26px;
+        top: 140px;
+        transform: rotate(143deg);
+    }
+    .line-shape.shape4{
+        right: -26px;
+        top: 150px;
+        transform: rotate(143deg);
+    }
+    .shape-5{
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        animation: rotate 15s linear infinite;
+        z-index: 2;
+        .line-shape{
+            position: static;
+        }
+        .line-shape.a{
+            width: 10px;
+        }
+        .line-shape.b{
+            width: 30px;
+        }
+        .line-shape.c{
+            width: 50px;
+        }
+        .line-shape.d{
+            width: 70px;
+        }
+        .line-shape.e{
+            width: 50px;
+        }
+        .line-shape.f{
+            width: 30px;
+        }
+        .line-shape.g{
+            width: 10px;
+        }
+    }
+    .circle-shape-b.shape6{
+        top: 180px;
+        left: 80px;
+        width: 100px;
+        height: 100px;
+        z-index: 0;
+    }
+}
+.two-square-shapes{
+    position: absolute;
+    width: 100%;
+    height: 170vh;
+    overflow: hidden;
+    top: 0;
+.shape7{
+    position: absolute;
+    top: 115vh;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 150px;
+    background: #243141;
+    transform: rotate(152deg) translateX(-50%);
+    border-radius: 30px;
+    background-image: linear-gradient(90deg, #020024 0%, #1e35a2 35%, #485fbc 100%);
+}
+.shape8{
+    position: absolute;
+    top: 140vh;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 150px;
+    background: #243141;
+    transform: rotate(152deg) translateX(-40%);
+    border-radius: 30px;
+    background-image: linear-gradient(90deg, #993f48 0%, #8b2730 35%, #ce6872 100%);
+}
+}
+@media screen and (max-width:765px) {
+    header{
+        .circle-shape.shape1{
+            top: 50px;
+            left: 15px;
+            z-index: 1;
+            opacity: 0;
+        }
+        .line-shape.shape2{
+            right: -66px;
+            top: 60vh;
+            transform: rotate(143deg);
+        }
+        .line-shape.shape3{
+            right: -66px;
+            top: 61.5vh;
+            transform: rotate(143deg);
+        }
+        .line-shape.shape4{
+            right: -66px;
+            top: 63vh;
+            transform: rotate(143deg);
+        }
+        .shape-5{
+            position: absolute;
+            left: 15px;
+            bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            animation: rotate 15s linear infinite;
+            z-index: 2;
+            .line-shape{
+                position: static;
+            }
+            .line-shape.a{
+                width: 10px;
+            }
+            .line-shape.b{
+                width: 30px;
+            }
+            .line-shape.c{
+                width: 50px;
+            }
+            .line-shape.d{
+                width: 70px;
+            }
+            .line-shape.e{
+                width: 50px;
+            }
+            .line-shape.f{
+                width: 30px;
+            }
+            .line-shape.g{
+                width: 10px;
+            }
+        }
+        .circle-shape-b.shape6{
+            top: 10px;
+            right: -27px;
+            width: 50px;
+            height: 50px;
+            z-index: 1;
+            transform: translateX(188px);
+        }
+    }
+    .two-square-shapes{
+    .shape7{
+        position: absolute;
+        top: 133vh;
+        right: 0;
+        z-index: -1;
+        width: 100%;
+        height: 80px;
+        background: #243141;
+        transform: rotate(152deg) translateX(-50%);
+        border-radius: 30px;
+        background-image: linear-gradient(90deg, #020024 0%, #1e35a2 35%, #485fbc 100%);
+    }
+    .shape8{
+        position: absolute;
+        top: 150vh;
+        right: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100px;
+        background: #243141;
+        transform: rotate(152deg) translateX(-40%);
+        border-radius: 30px;
+        background-image: linear-gradient(90deg, #993f48 0%, #8b2730 35%, #ce6872 100%);
+    }
+}
+}
+
+
+
+
+/* ............. contact section ................. */
+.contact-section{
+    padding: 50px 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: none;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+    overflow: hidden;
+    .popup-image{
+        width: 70%;
+        height: 70%;
+        margin: auto;
+    }
+}
+.contact-section.reveal{
+    display: flex;
+    .wrapper{
+        animation: popup 0.5s linear both;
+    }
+}
+
+
+.whatsapp-btn{
+    background: #2eb843;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: pointer;
+    i{
+        font-size: 35px;
+    }
+}
+
+
+/* .......... youtube section .................. */
+
+.customer-logos {
+    position: relative; 
+    height: 50vh;
+    position: relative;
+    .slick-prev.slick-arrow,.slick-next.slick-arrow{
+        position: absolute;
+        bottom: 0;
+        width: 100px;
+        transform: translateY(20px);
+        cursor: pointer;
+        border-radius: 8px;
+        border: 0;
+        color: white;
+        background-color: var(--primary-color);
+        padding: 5px;
+    }
+    .slick-prev.slick-arrow:hover,.slick-next.slick-arrow:hover{
+        background-color: var(--secondary-color);
+    }
+    .slick-next.slick-arrow{
+        left:51%;
+    }
+    .slick-prev.slick-arrow{
+        right:51%;
+    }
+}
+
+.slide {
+    position: relative;
+    text-align: center; 
+}
+
+.slide .fab.fa-youtube {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the icon */
+    font-size: 48px; /* Adjust icon size as needed */
+    color: #FF0000; /* Adjust icon color */
+}
+.slide:hover .fab.fa-youtube {
+    transform: translate(-50%, -50%) scale(1.1); /* Scale up the icon on hover */
+}
+
+.youtube-section{
+    padding: 50px 0;
+    z-index: 100;
+    .col-md-3{
+        margin-bottom: 20px;
+        img{
+            border-radius: 10px;
+        }
+    }
+}
+.youtube-title{
+    font-weight: bold;
+    color: var(--secondary-color);
+    span{
+        color: var(--primary-color);
+    }
+}
+
+
+
+.section-1{
+    z-index: 100;
+    .slick-slide {
+     margin: 0px 20px;
+ }
+ .logo-sldr .slick-track{
+   display: flex !important;
+   align-items: center;
+ }
+  .slick-slide img {
+     width: 100%;
+ }
+ 
+  .slick-slider
+ {
+     position: relative;
+     display: block;
+     box-sizing: border-box;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+       user-select: none;
+     -webkit-touch-callout: none;
+     -khtml-user-select: none;
+     -ms-touch-action: pan-y;
+         touch-action: pan-y;
+     -webkit-tap-highlight-color: transparent;
+ }
+ 
+  .slick-list
+ {
+     position: relative;
+     display: block;
+     overflow: hidden;
+     margin: 0;
+     padding: 0;
+     height: 100%;
+ }
+  .slick-list:focus
+ {
+     outline: none;
+ }
+  .slick-list.dragging
+ {
+     cursor: pointer;
+     cursor: hand;
+ }
+ 
+  .slick-slider .slick-track,
+  .slick-slider .slick-list
+ {
+     -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+         -ms-transform: translate3d(0, 0, 0);
+          -o-transform: translate3d(0, 0, 0);
+             transform: translate3d(0, 0, 0);
+ }
+ 
+  .slick-track
+ {
+     position: relative;
+     top: 0;
+     left: 0;
+     display: block;
+     height: 100%;
+     
+ }
+  .slick-track:before,
+  .slick-track:after
+ {
+     display: table;
+     content: '';
+ }
+  .slick-track:after
+ {
+     clear: both;
+ }
+  .slick-loading .slick-track
+ {
+     visibility: hidden;
+ }
+ 
+  .slick-slide
+ {
+     display: none;
+     float: left;
+     height: 100%;
+     min-height: 1px;
+     height: 100%;
+     border-radius: 10px;
+     overflow: hidden;
+ }
+ [dir='rtl'].slick-slide
+ {
+     float: right;
+ }
+  .slick-slide img
+ {
+     display: block;
+    
+ }
+  .slick-slide.slick-loading img
+ {
+     display: none;
+ }
+  .slick-slide.dragging img
+ {
+     pointer-events: none;
+ }
+  .slick-initialized .slick-slide
+ {
+     display: block;
+ }
+  .slick-loading .slick-slide
+ {
+     visibility: hidden;
+ }
+  .slick-vertical .slick-slide
+ {
+     display: block;
+     height: auto;
+     border: 1px solid transparent;
+ }
+  .slick-arrow.slick-hidden {
+     display: none;
+ }
+ }
+ 
+ 
+ 
+/* ................. review slider section ....................... */
+.review-slider {
+    .card {
+      border: 0;
+      .profile-row .profile {
+        width: 40px;
+        height: 40px;
+        background: radial-gradient(#6271cf 10%, #1f2b73 90%);
+        background-position-x: -6px;
+        background-position-y: -7px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 22px;
+      }
+      .profile-row .name-rating {
+        text-align: left;
+        padding-left: 5px;
+        .name {
+          margin-bottom: 0;
+          text-transform: capitalize;
+          font-weight: 600;
+        }
+        .stars {
+          font-size: 12px;
+          color: rgb(222, 194, 39);
+        }
+      }
+      .cnt {
+        text-align: left;
+        font-size: 13px;
+        padding-top: 10px;
+      }
+    }
+  }
+  /* ................. review slider section END .................... */
+ 
+
+ 
+ 
+ 
+ 
+
+
+
+   
+      /* new accordion section  */
+      .section-4{
+        padding: 50px 0;
+        width: 100%;
+        position: relative;
+        .heading{/*heading*/
+            background: linear-gradient(190deg, #96191d 90%, #86161a 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 36px;
+            font-family: var(--title-font);
+            font-weight: bolder;
+         }.heading .highlight{
+            color: #092068;
+         }
+        ul{
+            list-style-type: none;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }  
+        .accordion {
+            cursor: pointer;
+            padding: 10px;
+            width: auto;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            background-color: white;
+            opacity: 1;
+            transform: translateX(0);
+          }
+          .accordion.faded{
+            opacity: 1;
+            transform: translateX(0) !important;
+          }
+          
+          
+          
+          .accordion:after {
+            
+            content: '▼';
+            font-weight: bold;
+            float: left;
+            margin-right: 8px;
+            transform: rotate(28deg);
+            transition: 0.4s;
+          }
+          
+          .active:after {
+            transform: rotate(117deg);
+          }
+          
+          .panel {
+            margin-left: 15px;
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+          }
+    }
+      /* new accordion section END */
+
+      .slick-arrow-custom {
+        background-color: #343958;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        position: absolute;
+        bottom: -26px;
+        transform: translateY(-50%);
+        z-index: 1000;
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+  
+    @media(min-width:765px){
+        .customer-logos{
+            height: 60vh;
+        }
+       
+          
+    .slick-prev{
+        left: 45%;
+    }
+    
+    .slick-next {
+        right: 45%;
+    }
+    }
+    @media(max-width:765px){
+        .customer-logos{
+            height: 40vh;
+        }  
+        
+          
+    .slick-prev {
+        left: 20%;
+    }
+    
+    .slick-next {
+        right: 20%;
+    }
+    }
+      
